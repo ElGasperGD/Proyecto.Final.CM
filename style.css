@@ -1,131 +1,263 @@
 /* ==========================================
-   1. Reset básico y Variables de Color
-   ================================---------- */
-* {
+   Reset y Variables
+   ========================================== */
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 :root {
-    --color-primario: #2c3e50;   /* Azul oscuro / Gris elegante */
-    --color-secundario: #3498db; /* Azul brillante */
-    --color-fondo: #f8f9fa;      /* Fondo claro tipo Bootstrap */
-    --color-texto: #333333;      /* Texto principal oscuro */
-}
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--color-fondo);
-    color: var(--color-texto);
-    line-height: 1.6;
-    padding-bottom: 40px;
+    --color-primario: #38bdf8;
+    --color-acento: #a78bfa;
+    --color-fondo: #0b1120;
+    --color-fondo-2: #0f172a;
+    --color-superficie: rgba(30, 41, 59, .72);
+    --color-borde: rgba(148, 163, 184, .18);
+    --color-texto: #e2e8f0;
+    --color-texto-suave: #94a3b8;
+    --radio: 18px;
+    --sombra: 0 20px 45px rgba(0, 0, 0, .45);
+    --glow: 0 0 0 1px rgba(56, 189, 248, .25), 0 0 25px rgba(56, 189, 248, .12);
+    --transicion: 220ms cubic-bezier(.4, 0, .2, 1);
 }
 
 /* ==========================================
-   2. Estilos para el Header y Navegación
-   ================================---------- */
+   Scrollbar
+   ========================================== */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--color-fondo); }
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(var(--color-primario), var(--color-acento));
+    border-radius: 10px;
+    border: 2px solid var(--color-fondo);
+}
+
+/* ==========================================
+   Body
+   ========================================== */
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Segoe UI', system-ui, Tahoma, Geneva, Verdana, sans-serif;
+    background:
+        radial-gradient(900px 500px at 12% -8%, rgba(56, 189, 248, .18), transparent 60%),
+        radial-gradient(800px 500px at 95% 8%, rgba(167, 139, 250, .16), transparent 62%),
+        linear-gradient(180deg, var(--color-fondo-2), var(--color-fondo) 70%);
+    background-attachment: fixed;
+    color: var(--color-texto);
+    line-height: 1.7;
+    min-height: 100vh;
+}
+
+/* ==========================================
+   Header
+   ========================================== */
 header {
-    background-color: #ffffff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    margin-bottom: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    padding: 22px clamp(18px, 4vw, 40px);
+    background: rgba(11, 17, 32, .78);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--color-borde);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, .35);
 }
 
 header h1 {
-    padding: 20px 20px 0 20px;
-    color: var(--color-primario);
-    font-size: 1.8rem;
+    font-size: clamp(1.6rem, 5vw, 2.4rem);
+    letter-spacing: -.02em;
+    background: linear-gradient(100deg, #e2e8f0, var(--color-primario) 55%, var(--color-acento));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 14px;
 }
 
-/* Sobreescritura o refuerzo para la barra de navegación */
-.navbar {
-    padding: 10px 20px;
-    background-color: #ffffff !important;
-    border-bottom: 1px solid #dee2e6;
-}
-
-.navbar-nav {
-    display: flex;
-    list-style: none;
-    gap: 15px;
-}
-
-.nav-link {
-    color: var(--color-secundario) !important;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.2s ease;
-}
-
-.nav-link:hover {
-    color: var(--color-primario) !important;
+header h1::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    margin-top: 10px;
+    border-radius: 3px;
+    background: linear-gradient(90deg, var(--color-primario), var(--color-acento));
 }
 
 /* ==========================================
-   3. Estilos para el Contenido Principal y Secciones
-   ================================---------- */
-main {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px;
+   Navegación
+   ========================================== */
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
+nav a {
+    position: relative;
+    display: inline-block;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: .92rem;
+    font-weight: 600;
+    color: var(--color-texto-suave);
+    background: rgba(148, 163, 184, .08);
+    border: 1px solid var(--color-borde);
+    border-radius: 999px;
+    transition: color var(--transicion), background var(--transicion),
+                border-color var(--transicion), transform var(--transicion),
+                box-shadow var(--transicion);
+}
+
+nav a:hover {
+    transform: translateY(-2px);
+    color: #eaf6ff;
+    background: rgba(56, 189, 248, .14);
+    border-color: rgba(56, 189, 248, .55);
+    box-shadow: 0 6px 20px rgba(56, 189, 248, .22);
+}
+
+nav a:focus-visible {
+    outline: 2px solid var(--color-primario);
+    outline-offset: 3px;
+}
+
+/* ==========================================
+   Contenido Principal
+   ========================================== */
+main {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 clamp(15px, 3vw, 20px);
+}
+
+/* ==========================================
+   Tarjetas de Sección
+   ========================================== */
 section {
-    background: #ffffff;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 28px;
+    padding: clamp(20px, 3.5vw, 32px);
+    background: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: transform var(--transicion), box-shadow var(--transicion),
+                border-color var(--transicion);
+}
+
+/* brillo superior */
+section::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-primario), var(--color-acento), transparent);
+    opacity: .6;
+}
+
+section:hover {
+    transform: translateY(-6px);
+    border-color: rgba(56, 189, 248, .4);
+    box-shadow: var(--sombra), var(--glow);
 }
 
 section h2 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: clamp(1.25rem, 3.2vw, 1.65rem);
+    letter-spacing: -.01em;
+    color: #f1f5f9;
+    margin-bottom: 18px;
+    padding-left: 16px;
+    border-left: 4px solid transparent;
+    border-image: linear-gradient(var(--color-primario), var(--color-acento)) 1;
+}
+
+section p {
+    color: var(--color-texto-suave);
+    line-height: 1.85;
+}
+
+section p + p { margin-top: .9rem; }
+
+section a:not(nav a) {
     color: var(--color-primario);
-    margin-bottom: 15px;
-    font-size: 1.4rem;
-    border-bottom: 2px solid var(--color-secundario);
-    padding-bottom: 8px;
-    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px dashed rgba(56, 189, 248, .5);
+    transition: color var(--transicion), border-color var(--transicion);
 }
+
+section a:not(nav a):hover {
+    color: var(--color-acento);
+    border-color: var(--color-acento);
+}
+
+/* listas dentro de secciones */
+section ul {
+    margin: .4rem 0 .4rem 1.1rem;
+    color: var(--color-texto-suave);
+}
+
+section li { margin-bottom: .45rem; }
+section li::marker { color: var(--color-primario); }
 
 /* ==========================================
-   4. Estilos para la Tabla
-   ================================---------- */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 15px;
-    background-color: #ffffff;
-    text-align: left;
-}
-
-th, td {
-    padding: 12px 15px;
-    border-bottom: 1px solid #e9ecef;
-}
-
-th {
-    background-color: var(--color-primario);
-    color: #ffffff;
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 0.85rem;
-    letter-spacing: 0.5px;
-}
-
-tbody tr {
-    transition: background-color 0.15s ease;
-}
-
-tbody tr:hover {
-    background-color: #f1f4f8;
-}
-
-/* ==========================================
-   5. Pie de página (Footer)
-   ================================---------- */
+   Footer
+   ========================================== */
 footer {
-    text-align: center;
     margin-top: 40px;
-    color: #6c757d;
-    font-size: 0.9rem;
+    padding: 24px;
+    text-align: center;
+    font-size: .88rem;
+    color: var(--color-texto-suave);
+    border-top: 1px solid var(--color-borde);
+    background: rgba(11, 17, 32, .55);
+}
+
+footer a {
+    color: var(--color-primario);
+    text-decoration: none;
+}
+
+footer a:hover { color: var(--color-acento); }
+
+/* ==========================================
+   Accesibilidad: menos movimiento
+   ========================================== */
+@media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+    html { scroll-behavior: auto; }
+}
+
+/* ==========================================
+   Responsive
+   ========================================== */
+@media (max-width: 600px) {
+
+    nav ul {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    main { padding: 0 15px; }
+
+    section {
+        padding: 20px;
+        border-radius: 14px;
+    }
+
+    section:hover { transform: none; }
+
+    section h2 { font-size: 1.22rem; }
+
+    header { padding: 18px; }
 }
