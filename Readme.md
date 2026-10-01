@@ -4,5 +4,5 @@ Proyecto colaborativo utilizando HTML, CSS y GitHub.
 
 ## Integrantes
 
-- Estudiante A
-- Estudiante B
+- Cristian Jaramillo
+- Jonathan Logaña
