@@ -1,0 +1,131 @@
+/* ==========================================
+   1. Reset básico y Variables de Color
+   ================================---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primario: #2c3e50;   /* Azul oscuro / Gris elegante */
+    --color-secundario: #3498db; /* Azul brillante */
+    --color-fondo: #f8f9fa;      /* Fondo claro tipo Bootstrap */
+    --color-texto: #333333;      /* Texto principal oscuro */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+    padding-bottom: 40px;
+}
+
+/* ==========================================
+   2. Estilos para el Header y Navegación
+   ================================---------- */
+header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+}
+
+header h1 {
+    padding: 20px 20px 0 20px;
+    color: var(--color-primario);
+    font-size: 1.8rem;
+}
+
+/* Sobreescritura o refuerzo para la barra de navegación */
+.navbar {
+    padding: 10px 20px;
+    background-color: #ffffff !important;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.navbar-nav {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+
+.nav-link {
+    color: var(--color-secundario) !important;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: var(--color-primario) !important;
+}
+
+/* ==========================================
+   3. Estilos para el Contenido Principal y Secciones
+   ================================---------- */
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+}
+
+section h2 {
+    color: var(--color-primario);
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+    border-bottom: 2px solid var(--color-secundario);
+    padding-bottom: 8px;
+    display: inline-block;
+}
+
+/* ==========================================
+   4. Estilos para la Tabla
+   ================================---------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: #ffffff;
+    text-align: left;
+}
+
+th, td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+th {
+    background-color: var(--color-primario);
+    color: #ffffff;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+tbody tr {
+    transition: background-color 0.15s ease;
+}
+
+tbody tr:hover {
+    background-color: #f1f4f8;
+}
+
+/* ==========================================
+   5. Pie de página (Footer)
+   ================================---------- */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #6c757d;
+    font-size: 0.9rem;
+}
