@@ -1,24 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imagenes</title>
+    <title>Catálogo de Motos | Velocidad y Estilo</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <table>
-        <tr>
-            <th>Imagen</th>
-            <th>Descripción</th>
-        </tr>
-        <tr>
-            <td><img src="https://4kwallpapers.com/images/walls/thumbs_3t/19357.jpg" alt="YZ"></td>
-            <td>Descripción de la imagen 1</td>
-        </tr>
-        <tr>
-            <td><img src="https://4kwallpapers.com/images/walls/thumbs_3t/5723.jpg" alt="R7"></td>
-            <td>Descripción de la imagen 2</td>
-        </tr>
-    </table>
+
+    <!-- Barra de Navegación -->
+    <header class="site-header">
+        <div class="nav-container">
+            <h1 class="logo">MotoStore</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="imagenes.html" class="active">Catálogo</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenido Principal / Catálogo -->
+    <main class="main-content">
+        <section class="catalog-section">
+            <div class="section-title">
+                <h2>Catálogo Exclusivo de Motos</h2>
+                <p>Explora nuestra selección de alto rendimiento y diseño aerodinámico.</p>
+            </div>
+
+            <!-- Tabla de Catálogo Estilizada -->
+            <div class="table-responsive">
+                <table class="moto-table">
+                    <thead>
+                        <tr>
+                            <th>Fotografía</th>
+                            <th>Modelo / Descripción</th>
+                            <th>Especificaciones</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="img-cell">
+                                <img src="https://4kwallpapers.com/images/walls/thumbs_3t/19357.jpg" alt="Yamaha YZ">
+                            </td>
+                            <td>
+                                <h3>Yamaha YZ Series</h3>
+                                <p>Diseñada para ofrecer máxima potencia en pista, con una respuesta de aceleración inmediata y chasis ultraligero.</p>
+                            </td>
+                            <td>
+                                <ul class="specs-list">
+                                    <li><strong>Categoría:</strong> Competición</li>
+                                    <li><strong>Motor:</strong> 4 Tiempos</li>
+                                    <li><strong>Estado:</strong> Disponible</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <button class="btn-detalles">Ver más</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="img-cell">
+                                <img src="https://4kwallpapers.com/images/walls/thumbs_3t/5723.jpg" alt="Yamaha R7">
+                            </td>
+                            <td>
+                                <h3>Yamaha R7 Sport</h3>
+                                <p>Una superdeportiva de nueva generación que combina agilidad deportiva con versatilidad para el uso diario en carretera.</p>
+                            </td>
+                            <td>
+                                <ul class="specs-list">
+                                    <li><strong>Categoría:</strong> Deportiva</li>
+                                    <li><strong>Motor:</strong> CP2 de 689cc</li>
+                                    <li><strong>Estado:</strong> En Stock</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <button class="btn-detalles">Ver más</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de Página -->
+    <footer class="site-footer">
+        <p>&copy; 2026 MotoStore. Todos los derechos reservados.</p>
+    </footer>
+
 </body>
 </html>
