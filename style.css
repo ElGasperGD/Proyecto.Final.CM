@@ -1,16 +1,17 @@
-/* Reset básico */
+/* ==========================================
+   1. Reset básico y Variables de Color
+   ================================---------- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Paleta de 3 colores y tipografía legible */
 :root {
-    --color-primario: #2c3e50;
-    --color-secundario: #3498db;
-    --color-fondo: #f4f6f7;
-    --color-texto: #333333;
+    --color-primario: #2c3e50;   /* Azul oscuro / Gris elegante */
+    --color-secundario: #3498db; /* Azul brillante */
+    --color-fondo: #f8f9fa;      /* Fondo claro tipo Bootstrap */
+    --color-texto: #333333;      /* Texto principal oscuro */
 }
 
 body {
@@ -18,87 +19,113 @@ body {
     background-color: var(--color-fondo);
     color: var(--color-texto);
     line-height: 1.6;
-    padding: 20px;
+    padding-bottom: 40px;
 }
 
-/* Estilos para contenedores */
-header, main, footer {
-    max-width: 900px;
-    margin: 0 auto 20px auto;
-    background: #bb8888;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+/* ==========================================
+   2. Estilos para el Header y Navegación
+   ================================---------- */
+header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
 }
 
-nav ul {
-    list-style: none;
+header h1 {
+    padding: 20px 20px 0 20px;
+    color: var(--color-primario);
+    font-size: 1.8rem;
+}
+
+/* Sobreescritura o refuerzo para la barra de navegación */
+.navbar {
+    padding: 10px 20px;
+    background-color: #ffffff !important;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.navbar-nav {
     display: flex;
+    list-style: none;
     gap: 15px;
-    margin-top: 10px;
 }
 
-nav a {
-    color: var(--color-secundario);
+.nav-link {
+    color: var(--color-secundario) !important;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
+    transition: color 0.2s ease;
 }
 
-/* Estilos para la tabla */
+.nav-link:hover {
+    color: var(--color-primario) !important;
+}
+
+/* ==========================================
+   3. Estilos para el Contenido Principal y Secciones
+   ================================---------- */
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+}
+
+section h2 {
+    color: var(--color-primario);
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+    border-bottom: 2px solid var(--color-secundario);
+    padding-bottom: 8px;
+    display: inline-block;
+}
+
+/* ==========================================
+   4. Estilos para la Tabla
+   ================================---------- */
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 15px;
+    background-color: #ffffff;
+    text-align: left;
 }
 
 th, td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
+    padding: 12px 15px;
+    border-bottom: 1px solid #e9ecef;
 }
 
 th {
     background-color: var(--color-primario);
-    color: white;
+    color: #ffffff;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
 }
 
-tr:hover {
-    background-color: #f1f1f1;
+tbody tr {
+    transition: background-color 0.15s ease;
 }
 
-/* Estilos para el formulario estático */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-top: 15px;
+tbody tr:hover {
+    background-color: #f1f4f8;
 }
 
-form div {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-input, textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-}
-
-button {
-    background-color: var(--color-secundario);
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: bold;
-    align-self: flex-start;
-}
-
-button:hover {
-    background-color: #2980b9;
+/* ==========================================
+   5. Pie de página (Footer)
+   ================================---------- */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #6c757d;
+    font-size: 0.9rem;
 }
