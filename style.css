@@ -10,18 +10,19 @@
 }
 
 :root {
-    --color-primario: #38bdf8;
-    --color-acento: #a78bfa;
-    --color-fondo: #0b1120;
-    --color-fondo-2: #0f172a;
-    --color-superficie: rgba(30, 41, 59, .72);
-    --color-borde: rgba(148, 163, 184, .18);
-    --color-texto: #090909;
-    --color-texto-suave: #94a3b8;
+    --color-primario: #ff2e4d;
+    --color-primario-2: #ff7a1a;
+    --color-acento: #00d4ff;
+    --color-fondo: #05070d;
+    --color-fondo-2: #0a0e17;
+    --color-superficie: rgba(20, 27, 42, .82);
+    --color-borde: rgba(255, 255, 255, .09);
+    --color-texto: #e8ecf3;
+    --color-texto-suave: #8f9bb3;
     --radio: 18px;
-    --sombra: 0 20px 45px rgba(0, 0, 0, .45);
-    --glow: 0 0 0 1px rgba(56, 189, 248, .25), 0 0 25px rgba(56, 189, 248, .12);
-    --transicion: 220ms cubic-bezier(.4, 0, .2, 1);
+    --sombra: 0 22px 60px rgba(0, 0, 0, .55);
+    --glow: 0 0 0 1px rgba(255, 46, 77, .22), 0 0 26px rgba(255, 46, 77, .12);
+    --transicion: 240ms cubic-bezier(.4, 0, .2, 1);
 }
 
 /* ==========================================
@@ -30,7 +31,7 @@
 ::-webkit-scrollbar { width: 10px; }
 ::-webkit-scrollbar-track { background: var(--color-fondo); }
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(var(--color-primario), var(--color-acento));
+    background: linear-gradient(var(--color-primario), var(--color-primario-2));
     border-radius: 10px;
     border: 2px solid var(--color-fondo);
 }
@@ -43,9 +44,10 @@ html { scroll-behavior: smooth; }
 body {
     font-family: 'Segoe UI', system-ui, Tahoma, Geneva, Verdana, sans-serif;
     background:
-        radial-gradient(900px 500px at 12% -8%, rgba(56, 189, 248, .18), transparent 60%),
-        radial-gradient(800px 500px at 95% 8%, rgba(167, 139, 250, .16), transparent 62%),
-        linear-gradient(180deg, var(--color-fondo-2), var(--color-fondo) 70%);
+        radial-gradient(1000px 620px at 8% -10%, rgba(255, 46, 77, .22), transparent 62%),
+        radial-gradient(900px 560px at 100% 4%, rgba(0, 212, 255, .16), transparent 60%),
+        radial-gradient(700px 500px at 50% 110%, rgba(255, 122, 26, .12), transparent 65%),
+        linear-gradient(175deg, var(--color-fondo-2), var(--color-fondo) 75%);
     background-attachment: fixed;
     color: var(--color-texto);
     line-height: 1.7;
@@ -60,17 +62,20 @@ header {
     top: 0;
     z-index: 10;
     padding: 22px clamp(18px, 4vw, 40px);
-    background: rgba(11, 17, 32, .78);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+    background: rgba(8, 11, 18, .82);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--color-borde);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, .35);
+    box-shadow: 0 10px 34px rgba(0, 0, 0, .4);
 }
 
 header h1 {
-    font-size: clamp(1.6rem, 5vw, 2.4rem);
-    letter-spacing: -.02em;
-    background: linear-gradient(100deg, #e2e8f0, var(--color-primario) 55%, var(--color-acento));
+    font-size: clamp(1.9rem, 5.6vw, 3.1rem);
+    font-weight: 900;
+    line-height: 1.06;
+    letter-spacing: -.035em;
+    text-transform: uppercase;
+    background: linear-gradient(100deg, #ffffff 4%, var(--color-primario) 40%, var(--color-primario-2) 66%, var(--color-acento) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -80,11 +85,11 @@ header h1 {
 header h1::after {
     content: "";
     display: block;
-    width: 60px;
-    height: 3px;
-    margin-top: 10px;
-    border-radius: 3px;
-    background: linear-gradient(90deg, var(--color-primario), var(--color-acento));
+    width: 58px;
+    height: 4px;
+    margin-top: 12px;
+    border-radius: 4px;
+    background: linear-gradient(90deg, var(--color-primario), var(--color-primario-2));
 }
 
 /* ==========================================
@@ -94,18 +99,19 @@ nav ul {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    justify-content: center;
+    gap: 8px;
 }
 
 nav a {
     position: relative;
     display: inline-block;
-    padding: 8px 16px;
+    padding: 10px 24px;
     text-decoration: none;
     font-size: .92rem;
     font-weight: 600;
     color: var(--color-texto-suave);
-    background: rgba(148, 163, 184, .08);
+    background: rgba(255, 255, 255, .04);
     border: 1px solid var(--color-borde);
     border-radius: 999px;
     transition: color var(--transicion), background var(--transicion),
@@ -115,51 +121,72 @@ nav a {
 
 nav a:hover {
     transform: translateY(-2px);
-    color: #eaf6ff;
-    background: rgba(56, 189, 248, .14);
-    border-color: rgba(56, 189, 248, .55);
-    box-shadow: 0 6px 20px rgba(56, 189, 248, .22);
+    color: #ffffff;
+    background: rgba(255, 46, 77, .16);
+    border-color: rgba(255, 46, 77, .55);
+    box-shadow: 0 8px 24px rgba(255, 46, 77, .28);
 }
 
 nav a:focus-visible {
-    outline: 2px solid var(--color-primario);
+    outline: 2px solid var(--color-acento);
     outline-offset: 3px;
 }
 
 /* ==========================================
-   3. Estilos para el Contenido Principal y Secciones
-   ================================---------- */
+   Contenido Principal
+   ========================================== */
 main {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 clamp(15px, 3vw, 20px);
 }
 
+/* ==========================================
+   Tarjetas de Sección
+   ========================================== */
 section {
-    background: #ffffff;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+    padding: clamp(20px, 3.5vw, 34px);
+    background: linear-gradient(160deg, rgba(26, 34, 51, .92), rgba(16, 22, 36, .9));
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: transform var(--transicion), box-shadow var(--transicion),
+                border-color var(--transicion);
+}
+
+/* brillo superior */
+section::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--color-primario), var(--color-primario-2), var(--color-acento), transparent);
+    opacity: .8;
+}
+
+section:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255, 46, 77, .38);
+    box-shadow: 0 34px 84px rgba(0, 0, 0, .72), var(--glow);
 }
 
 section h2 {
-    color: var(--color-primario);
-    margin-bottom: 15px;
-    font-size: 1.4rem;
-    border-bottom: 2px solid var(--color-secundario);
-    padding-bottom: 8px;
-    display: inline-block;
-}
-/* ==========================================
-   4. Estilos Profesionales para la Tabla
-   ================================---------- */
-.table-responsive {
-    background: var(--white);
-    border-radius: 16px;
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
-    overflow: hidden;
-    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: clamp(1.3rem, 3.4vw, 1.9rem);
+    font-weight: 800;
+    letter-spacing: -.01em;
+    color: #ffffff;
+    margin-bottom: 18px;
+    padding-left: 16px;
+    border-left: 4px solid transparent;
+    border-image: linear-gradient(var(--color-primario), var(--color-primario-2)) 1;
 }
 
 section p {
@@ -187,65 +214,67 @@ section ul {
     color: var(--color-texto-suave);
 }
 
-.moto-table tbody tr:hover {
-    background-color: #090909;
+section li { margin-bottom: .45rem; }
+section li::marker { color: var(--color-primario-2); }
+
+/* ==========================================
+   Footer
+   ========================================== */
+footer {
+    margin-top: 46px;
+    padding: 26px;
+    text-align: center;
+    font-size: .88rem;
+    color: var(--color-texto-suave);
+    border-top: 1px solid var(--color-borde);
+    background: rgba(5, 7, 13, .55);
 }
 
-/* Celda de imagen y título centrados */
-.img-cell {
-    width: 70%;
-    text-align: center; /* Centra el texto del título dentro de la celda */
+footer a {
+    color: var(--color-primario-2);
+    text-decoration: none;
 }
 
-.moto-title-mobile {
-    color: var(--primary-color);
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin-bottom: 10px;
+footer a:hover { color: var(--color-primario); }
+
+/* ==========================================
+   Accesibilidad: menos movimiento
+   ========================================== */
+@media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+    html { scroll-behavior: auto; }
 }
 
-.img-cell img {
-    display: block;
-    width: 320px;       /* Imagen más grande (puedes ajustar este valor si lo deseas) */
-    height: 190px;      /* Altura proporcional para mantener el diseño */
-    margin: 0 auto;     /* Centra horizontalmente la imagen */
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
+/* ==========================================
+   Responsive
+   ========================================== */
+@media (max-width: 600px) {
 
-.moto-table tbody tr:hover .img-cell img {
-    transform: scale(1.03);
-}
+    header { padding: 18px; }
 
-/* Celda de botón alineada a la derecha */
-.action-cell {
-    text-align: right;
-    width: 30%;
-}
+    nav ul {
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+        gap: 10px;
+    }
 
-/* Botón de acción refinado */
-.btn-detalles {
-    background-color: var(--secondary-color);
-    color: var(--white);
-    border: none;
-    padding: 12px 26px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    border-radius: 8px;
-    cursor: pointer;
-    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
-    transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
-    white-space: nowrap;
-}
+    nav li { display: flex; justify-content: center; }
 
-.btn-detalles:hover {
-    background-color: var(--accent-color);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
-}
+    nav a {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
 
-.moto-table tbody tr:hover .img-cell img {
-    transform: scale(1.02);
+    main { padding: 0 15px; }
+
+    section {
+        padding: 20px 16px;
+        border-radius: 15px;
+    }
+
+    section:hover { transform: none; }
+
+    section h2 { font-size: 1.24rem; }
 }
