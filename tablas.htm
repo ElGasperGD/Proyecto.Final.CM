@@ -1,53 +1,106 @@
-<!DOCTYPE html>
-<html lang="es">
+<section class="rr-panel" aria-labelledby="titulo-catalogo">
+    <h2 class="rr-panel__title" id="titulo-catalogo">Catálogo de Motos</h2>
+    <p class="rr-panel__sub">Datos técnicos principales de cada unidad</p>
 
-<head>
-    <h1>Tabla de datos</h1>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-</head>
-
-<body>
-    <div class="container mt-3">
-        <table class="table table-dark">
+    <div class="rr-table-wrap">
+        <table class="rr-table">
+            <caption class="visually-hidden">
+                Marcas, modelos, categoría, especificaciones y precio de motocicletas deportivas
+            </caption>
+            <colgroup>
+                <col class="rr-col-marca">
+                <col class="rr-col-modelo">
+                <col class="rr-col-moto">
+                <col class="rr-col-info">
+                <col class="rr-col-precio">
+            </colgroup>
             <thead>
                 <tr>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Email</th>
+                    <th scope="col">Marca</th>
+                    <th scope="col">Modelo</th>
+                    <th scope="col">Moto</th>
+                    <th scope="col">Información</th>
+                    <th scope="col">Precio (USD)</th>
+                </tr>
+            </thead>
+            <tbody>
                 <tr>
-                    <td>Juan</td>
-                    <td>Pérez</td>
-                    <td>juan.perez@gmail.com</td>
+                    <th scope="row" class="rr-table__marca">Yamaha</th>
+                    <td class="rr-table__modelo">YZ</td>
+                    <td class="rr-table__moto">Deportiva</td>
+                    <td class="rr-table__info">
+                        Bicilindro paralelo de 125 cc preparado para competición en la
+                        categoría GP125. Cuenta con caja de 6 velocidades, arranque en
+                        pie y un peso seco de 126 kg.
+                        <span class="rr-chip">125 cc</span>
+                        <span class="rr-chip">2 cilindros</span>
+                        <span class="rr-chip">126 kg</span>
+                        <span class="rr-chip">130 km/h</span>
+                    </td>
+                    <td class="rr-table__precio">8.500 USD</td>
                 </tr>
                 <tr>
-                    <td>María</td>
-                    <td>Gómez</td>
-                    <td>maria.gomez@gmail.com</td>
+                    <th scope="row" class="rr-table__marca">Yamaha</th>
+                    <td class="rr-table__modelo">R7 Sport</td>
+                    <td class="rr-table__moto">Superdeportiva</td>
+                    <td class="rr-table__info">
+                        Bicilindro paralelo de 689 cc que entrega 73 CV, derivado del
+                        motor CP4 de la MT-09. Monta chasis de aluminio, equipo electrónico
+                        completo para circuito y defensa frontal de carbono.
+                        <span class="rr-chip">689 cc</span>
+                        <span class="rr-chip">73 CV</span>
+                        <span class="rr-chip">188 kg</span>
+                        <span class="rr-chip">270 km/h</span>
+                    </td>
+                    <td class="rr-table__precio">14.800 USD</td>
                 </tr>
-                 
                 <tr>
-                    <td>Carlos</td>
-                    <td>Ramírez</td>
-                    <td>carlos.ramirez@gmail.com</td>
+                    <th scope="row" class="rr-table__marca">Kawasaki</th>
+                    <td class="rr-table__modelo">Ninja H2</td>
+                    <td class="rr-table__moto">Hiperdeportiva</td>
+                    <td class="rr-table__info">
+                        Bicilindro paralelo sobrealimentado de 399 cc que genera 215 CV
+                        con 25 Nm de par desde las 7500 rpm. Dispone de aerodinámica
+                        activa de ángulo variable.
+                        <span class="rr-chip">399 cc</span>
+                        <span class="rr-chip">215 CV</span>
+                        <span class="rr-chip">206 kg</span>
+                        <span class="rr-chip">360 km/h</span>
+                    </td>
+                    <td class="rr-table__precio">17.600 USD</td>
                 </tr>
-                 
                 <tr>
-                    <td>Andrea</td>
-                    <td>Torres</td>
-                    <td>andrea.torres@gmail.com</td>
+                    <th scope="row" class="rr-table__marca">KTM</th>
+                    <td class="rr-table__modelo">RC 390</td>
+                    <td class="rr-table__moto">Ligera</td>
+                    <td class="rr-table__info">
+                        Monocilíndrico de 293 cc con inyección de combustible y
+                        acelerador electrónico. Es la moto más ligera del catálogo,
+                        pensada para pilotos en formación.
+                        <span class="rr-chip">293 cc</span>
+                        <span class="rr-chip">44 CV</span>
+                        <span class="rr-chip">147 kg</span>
+                        <span class="rr-chip">179 km/h</span>
+                    </td>
+                    <td class="rr-table__precio">6.400 USD</td>
                 </tr>
-                 
                 <tr>
-                    <td>David</td>
-                    <td>Morales</td>
-                    <td>david.morales@gmail.com</td>
+                    <th scope="row" class="rr-table__marca">Suzuki</th>
+                    <td class="rr-table__modelo">GSX250R</td>
+                    <td class="rr-table__moto">Deportiva</td>
+                    <td class="rr-table__info">
+                        Monocilíndrico de 249 cc refrigerado por aire, con estructura de
+                        Peterson y tubo de refuerzo en el basculante. Es una buena
+                        opción para el debut en circuito gracias a su bajo coste de
+                        mantenimiento.
+                        <span class="rr-chip">249 cc</span>
+                        <span class="rr-chip">25 CV</span>
+                        <span class="rr-chip">132 kg</span>
+                        <span class="rr-chip">140 km/h</span>
+                    </td>
+                    <td class="rr-table__precio">5.900 USD</td>
                 </tr>
-                </tbody>
+            </tbody>
         </table>
     </div>
-</body>
-
-</html>
+</section>
