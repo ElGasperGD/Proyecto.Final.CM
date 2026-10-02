@@ -1,24 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imagenes</title>
+    <title>Catálogo de Motos | Velocidad y Estilo</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <table>
-        <tr>
-            <th>Imagen</th>
-            <th>Descripción</th>
-        </tr>
-        <tr>
-            <td><img src="https://4kwallpapers.com/images/walls/thumbs_3t/19357.jpg" alt="YZ"></td>
-            <td>Descripción de la imagen 1</td>
-        </tr>
-        <tr>
-            <td><img src="https://4kwallpapers.com/images/walls/thumbs_3t/5723.jpg" alt="R7"></td>
-            <td>Descripción de la imagen 2</td>
-        </tr>
-    </table>
+
+    <!-- Barra de Navegación -->
+    <header class="site-header">
+        <div class="nav-container">
+            <h1 class="logo">MotoStore</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="imagenes.html" class="active">Catálogo</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenido Principal / Catálogo -->
+    <main class="main-content">
+        <section class="catalog-section">
+            <div class="section-title">
+                <h2>Catálogo Exclusivo de Motos</h2>
+                <p>Explora nuestra selección de alto rendimiento y diseño aerodinámico.</p>
+            </div>
+
+            <!-- Tabla de Catálogo Estilizada -->
+            <div class="table-responsive">
+                <table class="moto-table">
+                    <tbody>
+                        <!-- Moto 1: Yamaha YZ -->
+                        <tr>
+                            <td class="img-cell">
+                                <h3 class="moto-title-mobile">Yamaha YZ</h3>
+                                <img src="https://wallpapercave.com/wp/wp7334705.jpg" alt="Yamaha YZ">
+                            </td>
+                            
+                        </tr>
+
+                        <!-- Moto 2: Yamaha R7 -->
+                        <tr>
+                            <td class="img-cell">
+                                <h3 class="moto-title-mobile">Yamaha R7 Sport</h3>
+                                <img src="https://4kwallpapers.com/images/walls/thumbs_3t/5723.jpg" alt="Yamaha R7">
+                            </td>
+                        </tr>
+
+                        <!-- Moto 3: Kawasaki Ninja -->
+                        <tr>
+                            <td class="img-cell">
+                                <h3 class="moto-title-mobile">Kawasaki Ninja H2</h3>
+                                <img src="https://4kwallpapers.com/images/walls/thumbs_3t/5724.jpg" alt="Kawasaki Ninja">
+                            </td>
+                        </tr>
+                        <!-- Moto 4: Kawasaki Ninja -->
+                        <tr>
+                            <td class="img-cell">
+                                <h3 class="moto-title-mobile">KTM RC 390</h3>
+                                <img src="https://4kwallpapers.com/images/walls/thumbs_3t/7823.jpg" alt="KTM RC 390">
+                            </td>
+                        </tr>
+                        <!-- Moto 5: Kawasaki Ninja -->
+                        <tr>
+                            <td class="img-cell">
+                                <h3 class="moto-title-mobile">Suzuki GSX250R</h3>
+                                <img src="https://4kwallpapers.com/images/walls/thumbs_3t/26896.jpg" alt="Suzuki GSX250R">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de Página -->
+    <footer class="site-footer">
+        <p>&copy; 2026 MotoStore. Todos los derechos reservados.</p>
+    </footer>
+
 </body>
 </html>
