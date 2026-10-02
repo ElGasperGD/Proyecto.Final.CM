@@ -1,12 +1,29 @@
+<header class="rr-topbar">
+    <div class="container">
+        <nav class="rr-navbar" aria-label="Navegación principal">
+            <button class="rr-navbar__toggle" type="button"
+                    aria-label="Abrir menú" aria-expanded="false"
+                    aria-controls="menu-principal" data-menu-toggle>
+                <span class="rr-navbar__bar"></span>
+                <span class="rr-navbar__bar"></span>
+                <span class="rr-navbar__bar"></span>
+            </button>
+
+            <ul class="rr-navbar__list" id="menu-principal" data-menu>
+                <li><a class="rr-navbar__link" href="index.html">Inicio</a></li>
+                <li><a class="rr-navbar__link is-active" href="tablas.htm" aria-current="page">Catálogo</a></li>
+                <li><a class="rr-navbar__link" href="imagenes.html">Imágenes</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 <section class="rr-panel" aria-labelledby="titulo-catalogo">
     <h2 class="rr-panel__title" id="titulo-catalogo">Catálogo de Motos</h2>
     <p class="rr-panel__sub">Datos técnicos principales de cada unidad</p>
 
     <div class="rr-table-wrap">
         <table class="rr-table">
-            <caption class="visually-hidden">
-                Marcas, modelos, categoría, especificaciones y precio de motocicletas deportivas
-            </caption>
+            
             <colgroup>
                 <col class="rr-col-marca">
                 <col class="rr-col-modelo">
@@ -27,7 +44,7 @@
                 <tr>
                     <th scope="row" class="rr-table__marca">Yamaha</th>
                     <td class="rr-table__modelo">YZ</td>
-                    <td class="rr-table__moto">Deportiva</td>
+                    <td class="rr-table__moto">Motocross</td>
                     <td class="rr-table__info">
                         Bicilindro paralelo de 125 cc preparado para competición en la
                         categoría GP125. Cuenta con caja de 6 velocidades, arranque en
@@ -72,7 +89,7 @@
                 <tr>
                     <th scope="row" class="rr-table__marca">KTM</th>
                     <td class="rr-table__modelo">RC 390</td>
-                    <td class="rr-table__moto">Ligera</td>
+                    <td class="rr-table__moto">Superdeportiva</td>
                     <td class="rr-table__info">
                         Monocilíndrico de 293 cc con inyección de combustible y
                         acelerador electrónico. Es la moto más ligera del catálogo,
@@ -87,7 +104,7 @@
                 <tr>
                     <th scope="row" class="rr-table__marca">Suzuki</th>
                     <td class="rr-table__modelo">GSX250R</td>
-                    <td class="rr-table__moto">Deportiva</td>
+                    <td class="rr-table__moto">Superdeportiva</td>
                     <td class="rr-table__info">
                         Monocilíndrico de 249 cc refrigerado por aire, con estructura de
                         Peterson y tubo de refuerzo en el basculante. Es una buena
@@ -104,3 +121,15 @@
         </table>
     </div>
 </section>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Catálogo de Motos</title>
+    <link rel="stylesheet" href="Tablas.css">
+</head>
+<body>
+    <!-- contenido -->
+</body>
+</html>
