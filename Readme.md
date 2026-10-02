@@ -1,8 +1,8 @@
 # Tarea HTML/CSS
 
-Proyecto colaborativo utilizando HTML, CSS y GitHub.
+Proyecto colaborativo taller 1
 
 ## Integrantes
 
-- Estudiante A
-- Estudiante B
+- Cristian Jaramillo
+- Jonathan Logaña

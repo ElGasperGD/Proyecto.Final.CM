@@ -162,23 +162,29 @@ section h2 {
     border: 1px solid var(--border-color);
 }
 
-.moto-table {
-    width: 100%;
-    border-collapse: collapse;
+section p {
+    color: var(--color-texto-suave);
+    line-height: 1.85;
 }
 
-.moto-table td {
-    padding: 24px 30px;
-    border-bottom: 1px solid var(--border-color);
-    vertical-align: middle;
+section p + p { margin-top: .9rem; }
+
+section a:not(nav a) {
+    color: var(--color-primario-2);
+    text-decoration: none;
+    border-bottom: 1px dashed rgba(255, 122, 26, .5);
+    transition: color var(--transicion), border-color var(--transicion);
 }
 
-.moto-table tbody tr:last-child td {
-    border-bottom: none;
+section a:not(nav a):hover {
+    color: var(--color-primario);
+    border-color: var(--color-primario);
 }
 
-.moto-table tbody tr {
-    transition: background-color 0.25s ease;
+/* listas dentro de secciones */
+section ul {
+    margin: .4rem 0 .4rem 1.1rem;
+    color: var(--color-texto-suave);
 }
 
 .moto-table tbody tr:hover {
@@ -240,15 +246,6 @@ section h2 {
     box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
 }
 
-/* ==========================================
-   5. Pie de Página (Footer)
-   ================================---------- */
-.site-footer {
-    background-color: var(--white);
-    border-top: 1px solid var(--border-color);
-    text-align: center;
-    padding: 24px;
-    color: #64748b;
-    font-size: 0.9rem;
-    margin-top: auto;
+.moto-table tbody tr:hover .img-cell img {
+    transform: scale(1.02);
 }
