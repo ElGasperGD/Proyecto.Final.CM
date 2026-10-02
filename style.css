@@ -278,3 +278,17 @@ footer a:hover { color: var(--color-primario); }
 
     section h2 { font-size: 1.24rem; }
 }
+.img-cell img {
+    display: block;
+    width: 950px;       /* Ancho grande y llamativo */
+    height: 800px;      /* Altura proporcional elegante */
+    margin: 0 auto;     /* Centrado horizontal automático absoluto */
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.moto-table tbody tr:hover .img-cell img {
+    transform: scale(1.02);
+}
